@@ -1,7 +1,4 @@
-"use client";
-
 import Link from "next/link";
-import { useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
 import { Wordmark } from "./wordmark";
 
@@ -12,9 +9,8 @@ const links = [
   { href: "#contato", label: "Contato" },
 ];
 
+// O menu mobile abre e fecha pelo script inline do layout.
 export function Header() {
-  const [open, setOpen] = useState(false);
-
   return (
     <header className="gutter sticky top-0 z-50 bg-bg">
       <div className="rule-b flex h-18 items-center justify-between gap-4">
@@ -35,36 +31,31 @@ export function Header() {
           <ThemeToggle />
           <button
             type="button"
-            onClick={() => setOpen(!open)}
-            aria-expanded={open}
+            data-menu-toggle
+            aria-expanded="false"
             aria-controls="mobile-menu"
-            aria-label={open ? "Fechar menu" : "Abrir menu"}
-            className="btn btn-line size-11 px-0"
+            aria-label="Abrir menu"
+            className="group btn btn-line size-11 px-0"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
-              {open ? <path d="M18 6 6 18M6 6l12 12" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+              <path className="hidden group-aria-expanded:block" d="M18 6 6 18M6 6l12 12" />
+              <path className="group-aria-expanded:hidden" d="M4 7h16M4 12h16M4 17h16" />
             </svg>
           </button>
         </div>
       </div>
 
-      {open && (
-        <nav id="mobile-menu" className="rule-b md:hidden">
-          <ul>
-            {links.map((link) => (
-              <li key={link.href} className="border-b-[1.5px] border-border/20 last:border-0">
-                <a
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  className="type-display block py-3 text-3xl hover:text-accent"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      <nav id="mobile-menu" hidden className="rule-b md:hidden">
+        <ul>
+          {links.map((link) => (
+            <li key={link.href} className="border-b-[1.5px] border-border/20 last:border-0">
+              <a href={link.href} className="type-display block py-3 text-3xl hover:text-accent">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </header>
   );
 }
