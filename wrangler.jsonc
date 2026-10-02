@@ -8,5 +8,12 @@
   },
   "routes": [
     { "pattern": "migueloliveira.com.br", "custom_domain": true }
-  ]
+  ],
+  "observability": {
+    "logs": {
+      "enabled": true,
+      "invocation_logs": true,
+      "persist": true
+    }
+  },
 }
