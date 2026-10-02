@@ -44,10 +44,10 @@ export default function Home() {
             <dl className="rounded-box border-[2.5px] border-border bg-surface shadow-[4px_4px_0_var(--c-accent)]">
               <div className="flex items-center justify-between gap-3 border-b-[2.5px] border-border px-4 py-3">
                 <dt className="kicker">agora</dt>
-                <span className="flex items-center gap-2 kicker text-muted">
+                <dd className="flex items-center gap-2 kicker text-muted">
                   <span className="size-2 rounded-full bg-block outline-[1.5px] outline-border outline" aria-hidden="true" />
                   {profile.location}
-                </span>
+                </dd>
               </div>
               {profile.now.map((item) => (
                 <div key={item.label} className="grid grid-cols-[7.5rem_1fr] gap-3 border-b-[1.5px] border-border/20 px-4 py-3 last:border-0">
