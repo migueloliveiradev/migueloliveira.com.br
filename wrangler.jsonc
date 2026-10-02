@@ -2,6 +2,9 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "migueloliveira-com-br",
   "compatibility_date": "2026-10-01",
+  "build": {
+    "command": "npm run build"
+  },
   "assets": {
     "directory": "./out",
     "not_found_handling": "404-page"

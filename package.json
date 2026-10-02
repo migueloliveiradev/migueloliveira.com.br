@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "next build && wrangler deploy"
+    "deploy": "wrangler deploy"
   },
   "dependencies": {
     "next": "16.3.8",
