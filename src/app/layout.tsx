@@ -3,11 +3,11 @@ import { Recursive } from "next/font/google";
 import { profile } from "@/data/profile";
 import "./globals.css";
 
-// Fonte variável: os eixos MONO e CASL geram as variações de texto, display e mono.
+// Fonte variável: os eixos wght e MONO geram as variações de texto, display e mono.
 const recursive = Recursive({
   variable: "--font-recursive",
   subsets: ["latin"],
-  axes: ["CASL", "MONO", "slnt"],
+  axes: ["MONO"],
 });
 
 export const metadata: Metadata = {

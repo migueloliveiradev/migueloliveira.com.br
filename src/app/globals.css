@@ -18,10 +18,10 @@
   --stroke-thick: 2.5px;
 
   /* Recursive: eixos variáveis em vez de famílias separadas. */
-  --type-body: "CASL" 0, "MONO" 0, "slnt" 0, "wght" 420;
-  --type-strong: "CASL" 0, "MONO" 0, "slnt" 0, "wght" 650;
-  --type-display: "CASL" 0, "MONO" 0, "slnt" 0, "wght" 850;
-  --type-mono: "CASL" 0, "MONO" 1, "slnt" 0, "wght" 500;
+  --type-body: "MONO" 0, "wght" 420;
+  --type-strong: "MONO" 0, "wght" 650;
+  --type-display: "MONO" 0, "wght" 850;
+  --type-mono: "MONO" 1, "wght" 500;
 }
 
 .dark {
